@@ -1,0 +1,54 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+template <typename T>
+void sortArray( T * a, int N)
+{
+        cout<<"fil array: "<<endl;
+    for(int i=0;i<N;i++)    {
+        cout<<"arr["<<i<<"]:";
+        cin>>a[i];
+    }
+        cout<<endl;
+    cout<<"nums in your array: "<<endl;
+        for(int i=0;i<N;i++)    {
+        cout<<" "<<a[i];
+    }
+    for (int i = 0; i <N; i++){
+        for(int j=N-1;j>i;j--){
+            if(a[j]<a[j-1])
+                swap(a[j],a[j-1]);
+        }
+    }
+    cout << endl;
+    cout<<"after sort"<<endl;
+        for(int i=0;i<N;i++){
+            cout<<" "<<a[i];
+        }
+        cout<<endl;
+
+} 
+int main()
+{
+    int size=0;
+    double dsize=0;
+    cout<<"enter int array size: ";
+    cin>>size;
+    cout<<endl;
+    cout<<"enter double array size: ";
+    cin>>dsize;
+    int *arr=new int [size];
+    double *darr =new double [size];
+if(!arr[size] )
+{
+    sortArray(arr,size);
+}
+
+else
+{
+    sortArray(darr,size);
+}
+return 0;       
+}
